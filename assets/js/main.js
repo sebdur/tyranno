@@ -2,7 +2,7 @@ let container;
 let camera;
 let renderer;
 let scene;
-let tyrano;
+let tyranno;
 
 init();
 
@@ -21,7 +21,7 @@ function init() {
   camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
   camera.position.set(0, 5, 45);
 
-  const ambient = new THREE.AmbientLight(0x829395, 4);
+  const ambient = new THREE.AmbientLight(0x829395, 6);
   scene.add(ambient);
 
   const light = new THREE.DirectionalLight(0xcae6e9, 4);
@@ -37,14 +37,14 @@ function init() {
   let loader = new THREE.GLTFLoader();
   loader.load('./assets/3d/scene.gltf', function(gltf){
     scene.add(gltf.scene);
-    tyrano = gltf.scene.children[0];
+    tyranno = gltf.scene.children[0];
     animate();
   });
 }
 
 function animate() {
   requestAnimationFrame(animate);
-  tyrano.rotation.z += 0.01;
+  tyranno.rotation.z -= 0.01;
   renderer.render(scene,camera);
 }
 
