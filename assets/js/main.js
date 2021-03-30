@@ -44,7 +44,7 @@ function init() {
 
 function animate() {
   requestAnimationFrame(animate);
-  tyranno.rotation.z -= 0.01;
+  tyranno.rotation.z += 0.03;
   renderer.render(scene,camera);
 }
 
